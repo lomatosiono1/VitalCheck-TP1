@@ -92,6 +92,7 @@ p{
   padding: 5%;
   align-items: center;
   justify-content: center;
+  font-family: "Century Gothic", serif;
 }  
 .box1{
   flex:1;
