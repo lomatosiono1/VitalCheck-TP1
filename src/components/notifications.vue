@@ -3,20 +3,28 @@
         <div class="box1">
             <div class="card flex1">
                 <div @mouseenter="visible = true">
-                    <Sidebar v-model:visible="visible" style="background-color: #D7D7D7; justify-content: left;" >
-                    <div class="icon1">
-                        <Button @click="$router.push('/inventory'), visible=false" icon="pi pi-box" label="Inventory" style="background-color: #E5E5E5; color: black; margin:5%;" />
-                        <Button icon="pi pi-users" label="Providers" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button icon="pi pi-book" label="Catering" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button icon="pi pi-chart-bar" label="Reports" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button icon="pi pi-shopping-cart" label="Sales" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button @click="$router.push('/notification'), visible=false" icon="pi pi-bell" label="Notifications" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button @click="$router.push('/settings'), visible=false" icon="pi pi-cog" label="Setting" style="background-color: #E5E5E5;color: black; margin:5%;"/>
-                    </div>
-                    <div class="icon1-1" style="align-items: flex-end;">
-                        <Button @click="$router.push('/'), visible=false" icon="pi pi-sign-out" label="Sign off" style="color: white; " />
-                    </div>
-                </Sidebar>
+                    <Sidebar v-model:visible="visible" style="background-color: #D7D7D7; justify-content: left;">
+                        <div class="icon1">
+                            <Button @click="$router.push('/inventory'), visible=false" icon="pi pi-box"
+                                    label="Inventory" style="background-color: #E5E5E5; color: black; margin:5%;"/>
+                            <Button icon="pi pi-users" label="Providers" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button icon="pi pi-book" label="Catering" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button icon="pi pi-chart-bar" label="Reports" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button icon="pi pi-shopping-cart" label="Sales" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button @click="$router.push('/notification'), visible=false" icon="pi pi-bell"
+                                    label="Notifications" style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button @click="$router.push('/settings'), visible=false" icon="pi pi-cog" label="Setting"
+                                    style="background-color: #E5E5E5;color: black; margin:5%;"/>
+                        </div>
+                        <div class="icon1-1" style="align-items: flex-end;">
+                            <Button @click="$router.push('/'), visible=false" icon="pi pi-sign-out" label="Sign off"
+                                    style="color: white; "/>
+                        </div>
+                    </Sidebar>
                 </div>
                 <div class="icon1">
                     <i class="pi pi-box" @click="visible = true" style="background-color: #E5E5E5;"/>
@@ -48,64 +56,69 @@
             </div>
             <div class="box2-2">
                 <h2>Producto en Riesgo de Agotarse</h2>
-                <p>Se venden diariamente 3 unidades de "Vitamina D" y solo se encuentra 9 unidades de este producto en stock</p>
+                <p>Se venden diariamente 3 unidades de "Vitamina D" y solo se encuentra 9 unidades de este producto en
+                    stock</p>
             </div>
         </div>
     </div>
-
 </template>
 
 <script>
-import { ref } from "vue";
+import {ref} from "vue";
 import Sidebar from 'primevue/sidebar';
 import Button from "primevue/components/button/Button";
+
 export default {
     name: "notifications-n",
     components: {
-    Sidebar,
-    Button
-},
-    setup(){
+        Sidebar,
+        Button
+    },
+    setup() {
         const visible = ref(false);
-        return { visible };
+        return {visible};
     }
 };
-
 </script>
+
 
 <style scoped>
 body {
-  width: 100%;
-}
-.flex{
-  display: flex;
-  color: white;
-  padding: 5%;
-  border-radius: 3%;
-  width: 120%;
-  text-align: center;
+    width: 100%;
+    font-family: 'Calibri',sans-serif
 }
 
-.flex1{
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  height: 100vh;
-  flex-direction: column;
-  
+.flex {
+    display: flex;
+    color: white;
+    padding: 5%;
+    border-radius: 3%;
+    width: 120%;
+    text-align: center;
 }
-.box-container{
-  display: flex;
+
+.flex1 {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+    flex-direction: column;
+
 }
-.box1{
+
+.box-container {
+    display: flex;
+}
+
+.box1 {
     background-color: #DADADA;
     flex: 0 0 5%;
     justify-content: left;
     align-items: left;
     margin: 0 2% 0 0;
 }
-.icon1
-{
+
+.icon1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,7 +127,8 @@ body {
     padding: 10%;
 
 }
-.icon1-1{
+
+.icon1-1 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -124,7 +138,7 @@ body {
     color: white;
 }
 
-i{
+i {
     cursor: pointer;
     margin: 10% 0 10%;
     font-size: 400%;
@@ -133,7 +147,7 @@ i{
     border-radius: 10%;
 }
 
-Button{
+Button {
     background: none;
     border: none;
     cursor: pointer;
@@ -144,7 +158,7 @@ Button{
     text-align: center;
 }
 
-.boton{
+.boton {
     background-color: #B7334D;
     color: white;
     width: 100%;
@@ -156,7 +170,7 @@ Button{
     text-align: center;
 }
 
-.box2{
+.box2 {
     background-color: #DADADA;
     flex: 1;
     justify-content: left;
@@ -164,12 +178,13 @@ Button{
     margin: 0 0 0 0;
     text-align: center;
 }
-h1{
+
+h1 {
     color: #B7334D;
     font-size: 350%;
 }
 
-.box2-2{
+.box2-2 {
     background-color: #319B92;
     margin: 2% 3% 1% 3%;
     border-radius: 20px;
@@ -177,10 +192,8 @@ h1{
     text-align: left;
 }
 
-p
-{
+p {
     text-align: left;
     padding: 0 0 0 1%
 }
-
 </style>

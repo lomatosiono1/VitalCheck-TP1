@@ -1,104 +1,118 @@
 <template>
     <div class="box-container">
-       <div class="box1">
-        <div class="card flex1">
-            <div @mouseenter="visible = true">
-                <Sidebar v-model:visible="visible" style="background-color: #D7D7D7; justify-content: left;" >
-                    <div class="icon1">
-                        <Button @click="$router.push('/inventory'), visible=false" icon="pi pi-box" label="Inventory" style="background-color: #E5E5E5; color: black; margin:5%;" />
-                        <Button icon="pi pi-users" label="Providers" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button icon="pi pi-book" label="Catering" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button icon="pi pi-chart-bar" label="Reports" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button icon="pi pi-shopping-cart" label="Sales" @click="visible = true" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button @click="$router.push('/notification'), visible=false" icon="pi pi-bell" label="Notifications" style="background-color: #E5E5E5;color: black;margin:5%;"/>
-                        <Button @click="$router.push('/settings'), visible=false" icon="pi pi-cog" label="Setting" style="background-color: #E5E5E5;color: black; margin:5%;"/>
-                    </div>
-                    <div class="icon1-1" style="align-items: flex-end;">
-                        <Button @click="$router.push('/'), visible=false" icon="pi pi-sign-out" label="Sign off" style="color: white; " />
-                    </div>
-                </Sidebar>
-            </div>
-            <div class="icon1">
-                <i class="pi pi-box" @click="visible = true" style="background-color: #E5E5E5;"/>
-                <i class="pi pi-users" @click="visible = true" style="background-color: #E5E5E5;"/>
-                <i class="pi pi-book" @click="visible = true" style="background-color: #E5E5E5;"/>
-                <i class="pi pi-chart-bar" @click="visible = true" style="background-color: #E5E5E5;"/>
-                <i class="pi pi-shopping-cart" @click="visible = true" style="background-color: #E5E5E5;"/>
-                <i class="pi pi-bell" @click="visible = true" style="background-color: #E5E5E5;"/>
-                <i class="pi pi-cog" @click="visible = true" style="background-color: #E5E5E5;"/>
-            </div>
-            <div class="icon1-1">
-                <i class="pi pi-sign-out" @click="visible = true"/>
-            </div>
-        </div>
-    </div>
-
-    <div @mouseenter="inicio=true">
-        <Dialog v-model:visible="inicio" modal>
-            <h1 class="admin">Ingreso Administrador</h1>
-            <label>Nombre de Administrador</label><br>
-            <InputText type="text" v-model="value" class="dates"/><br>
-            <label>Contraseña</label><br>
-            <InputText type="text" v-model="value" class="dates"/><br>
-            <label>Ping</label><br>
-            <InputText type="text" v-model="value" class="dates"/><br>
-            <Button icon="pi pi-times" class="button" label="Cancelar" @click="cancelar()"/>
-            <Button icon="pi pi-check" class="button" label="Confirmar" @click="cancelar()"/>
-        </Dialog>
-    </div>
-
-    <div @mouseenter="admin=true">
-        <Dialog v-model:visible="admin" modal>
-            <h1 class="admin">Administrador</h1>
-            <Button @click="$router.push('/'), visible=false" class="boton" label="Cerrar Sesión Administrador"/>
-            <Button class="boton" label="Iniciar Sesión Administrador" @click="inicio=true" />
-        </Dialog>
-    </div>
-
-    <div class="box2">
-        <div class="card box2-2 flex">
-            <div class="box"> 
-                <Button @click="$router.push('/perfil'), visible=false" style="background-color: transparent; border: none;">
-                    <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;">
-                        <i class="pi pi-user" style="font-size: 200%;"></i>
-                        <h1 style="margin: 1%; font-size: 80%;">Mi Perfil</h1>
-                    </div>
-                </Button>
-            </div>
-            <div class="box">
-                <Button @click="$router.push('/soporte'), visible=false" style="background-color: transparent; border: none;">
-                    <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;">
-                        <i class="pi pi-comments" style="font-size: 200%;"></i>
-                        <h1 style="margin: 1%; font-size: 120%;">Soporte</h1>
-                    </div>
-                </Button>
+        <div class="box1">
+            <div class="card flex1">
+                <div @mouseenter="visible = true">
+                    <Sidebar v-model:visible="visible" style="background-color: #D7D7D7; justify-content: left;">
+                        <div class="icon1">
+                            <Button @click="$router.push('/inventory'), visible=false" icon="pi pi-box"
+                                    label="Inventory" style="background-color: #E5E5E5; color: black; margin:5%;"/>
+                            <Button icon="pi pi-users" label="Providers" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button icon="pi pi-book" label="Catering" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button icon="pi pi-chart-bar" label="Reports" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button icon="pi pi-shopping-cart" label="Sales" @click="visible = true"
+                                    style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button @click="$router.push('/notification'), visible=false" icon="pi pi-bell"
+                                    label="Notifications" style="background-color: #E5E5E5;color: black;margin:5%;"/>
+                            <Button @click="$router.push('/settings'), visible=false" icon="pi pi-cog" label="Setting"
+                                    style="background-color: #E5E5E5;color: black; margin:5%;"/>
+                        </div>
+                        <div class="icon1-1" style="align-items: flex-end;">
+                            <Button @click="$router.push('/'), visible=false" icon="pi pi-sign-out" label="Sign off"
+                                    style="color: white; "/>
+                        </div>
+                    </Sidebar>
+                </div>
+                <div class="icon1">
+                    <i class="pi pi-box" @click="visible = true" style="background-color: #E5E5E5;"/>
+                    <i class="pi pi-users" @click="visible = true" style="background-color: #E5E5E5;"/>
+                    <i class="pi pi-book" @click="visible = true" style="background-color: #E5E5E5;"/>
+                    <i class="pi pi-chart-bar" @click="visible = true" style="background-color: #E5E5E5;"/>
+                    <i class="pi pi-shopping-cart" @click="visible = true" style="background-color: #E5E5E5;"/>
+                    <i class="pi pi-bell" @click="visible = true" style="background-color: #E5E5E5;"/>
+                    <i class="pi pi-cog" @click="visible = true" style="background-color: #E5E5E5;"/>
+                </div>
+                <div class="icon1-1">
+                    <i class="pi pi-sign-out" @click="visible = true"/>
+                </div>
             </div>
         </div>
-        <div class="card box2-2 flex">
-            <div class="box">
-                <Button @click="$router.push('/membresia')" style="background-color: transparent; border: none;">
-                    <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;">
-                        <i class="pi pi-id-card" style="font-size: 200%;"></i>
-                        <h1 style="margin: 1%; font-size: 100%;">Membresía</h1>
-                    </div>
-                </Button>
+
+        <div @mouseenter="inicio=true">
+            <Dialog v-model:visible="inicio" modal>
+                <h1 class="admin">Ingreso Administrador</h1>
+                <label>Nombre de Administrador</label><br>
+                <InputText type="text" v-model="value" class="dates"/>
+                <br>
+                <label>Contraseña</label><br>
+                <InputText type="text" v-model="value" class="dates"/>
+                <br>
+                <label>Ping</label><br>
+                <InputText type="text" v-model="value" class="dates"/>
+                <br>
+                <Button icon="pi pi-times" class="button" label="Cancelar" @click="cancelar()"/>
+                <Button icon="pi pi-check" class="button" label="Confirmar" @click="cancelar()"/>
+            </Dialog>
+        </div>
+
+        <div @mouseenter="admin=true">
+            <Dialog v-model:visible="admin" modal>
+                <h1 class="admin">Administrador</h1>
+                <Button @click="$router.push('/'), visible=false" class="boton" label="Cerrar Sesión Administrador"/>
+                <Button class="boton" label="Iniciar Sesión Administrador" @click="inicio=true"/>
+            </Dialog>
+        </div>
+
+        <div class="box2">
+            <div class="card box2-2 flex">
+                <div class="box">
+                    <Button @click="$router.push('/perfil'), visible=false"
+                            style="background-color: transparent; border: none;">
+                        <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;">
+                            <i class="pi pi-user" style="font-size: 200%;"></i>
+                            <h1 style="margin: 1%; font-size: 80%;">Mi Perfil</h1>
+                        </div>
+                    </Button>
+                </div>
+                <div class="box">
+                    <Button @click="$router.push('/soporte'), visible=false"
+                            style="background-color: transparent; border: none;">
+                        <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;">
+                            <i class="pi pi-comments" style="font-size: 200%;"></i>
+                            <h1 style="margin: 1%; font-size: 120%;">Soporte</h1>
+                        </div>
+                    </Button>
+                </div>
             </div>
-            <div class="box">
-                <Button style="background-color: transparent; border: none;">
-                    <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;" @click="admin=true">
-                        <i class="pi pi-cog" style="font-size: 230%;"></i>
-                        <h1 style="margin: 1%; font-size: 75%; padding: 0%;">Administrador</h1>
-                    </div>
-                </Button>
+            <div class="card box2-2 flex">
+                <div class="box">
+                    <Button @click="$router.push('/membresia')" style="background-color: transparent; border: none;">
+                        <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;">
+                            <i class="pi pi-id-card" style="font-size: 200%;"></i>
+                            <h1 style="margin: 1%; font-size: 100%;">Membresía</h1>
+                        </div>
+                    </Button>
+                </div>
+                <div class="box">
+                    <Button style="background-color: transparent; border: none;">
+                        <div class="card1 flex flex-wrap gap-2 justify-content-center" style="flex-direction: column;"
+                             @click="admin=true">
+                            <i class="pi pi-cog" style="font-size: 230%;"></i>
+                            <h1 style="margin: 1%; font-size: 75%; padding: 0%;">Administrador</h1>
+                        </div>
+                    </Button>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </template>
 
 <script>
 
-import { ref } from "vue";
+import {ref} from "vue";
 import Sidebar from 'primevue/sidebar';
 import Button from "primevue/components/button/Button";
 import Dialog from 'primevue/dialog';
@@ -110,48 +124,52 @@ export default {
         Dialog,
         Button,
     },
-    setup(){
+    setup() {
         const visible = ref(false);
         const admin = ref(false);
         const inicio = ref(false);
 
-        return { visible, admin, inicio };
+        return {visible, admin, inicio};
     },
     methods: {
         cancelar() {
-            this.admin= false;
+            this.admin = false;
             this.inicio = false;
         }
-    }    
+    }
 }
 
 </script>
 
 <style scoped>
 body {
-  width: 100%;
-}
-.flex{
-  display: flex;
-  color: white;
-  padding: 5%;
-  border-radius: 3%;
-  width: 120%;
-  text-align: center;
+    width: 100%;
+    font-family: 'Calibri',sans-serif
 }
 
-.flex1{
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  height: 100vh;
-  flex-direction: column;
-  
+.flex {
+    display: flex;
+    color: white;
+    padding: 5%;
+    border-radius: 3%;
+    width: 120%;
+    text-align: center;
 }
-.box-container{
-  display: flex;
+
+.flex1 {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    height: 100vh;
+    flex-direction: column;
+
 }
-.box1{
+
+.box-container {
+    display: flex;
+}
+
+.box1 {
     background-color: #DADADA;
     flex: 0 0 5%;
     justify-content: left;
@@ -159,17 +177,17 @@ body {
     margin: 0 25% 0 0;
 }
 
-.box2{
+.box2 {
     justify-content: center;
 }
-.box2-2
-{
+
+.box2-2 {
     display: flex;
     align-items: center;
 }
 
-.box{
-    background-color: #B7334D;    
+.box {
+    background-color: #B7334D;
     box-sizing: border-box;
     color: white;
     font-size: 200%;
@@ -178,8 +196,8 @@ body {
     border-radius: 10%;
     text-align: center;
 }
-.icon1
-{
+
+.icon1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -188,7 +206,8 @@ body {
     padding: 10%;
 
 }
-.icon1-1{
+
+.icon1-1 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -198,7 +217,7 @@ body {
     color: white;
 }
 
-i{
+i {
     cursor: pointer;
     margin: 10% 0 10%;
     font-size: 400%;
@@ -207,8 +226,8 @@ i{
     border-radius: 10%;
 }
 
-Button{
-    background:#B7334D;
+Button {
+    background: #B7334D;
     border: none;
     cursor: pointer;
     font-size: 100%;
@@ -217,8 +236,7 @@ Button{
     border-radius: 10px;
 }
 
-.button
-{
+.button {
     background: #B7334D;
     border: none;
     cursor: pointer;
@@ -227,8 +245,8 @@ Button{
     margin: 2%;
     text-align: center;
 }
-.iboton
-{
+
+.iboton {
     background: none;
     border: none;
     cursor: pointer;
@@ -237,7 +255,8 @@ Button{
     border-radius: 10%;
     text-align: center;
 }
-.boton{
+
+.boton {
     background-color: #B7334D;
     color: white;
     width: 100%;
@@ -248,50 +267,54 @@ Button{
     text-align: center;
 }
 
-.card1{
+.card1 {
     display: flex;
     align-items: center;
 
 }
-.table
-{
+
+.table {
     background-color: #DADADA;
 }
 
-.admin
-{
+.admin {
     font-size: 200%;
     text-align: center;
-    color:#B7334D;
+    color: #B7334D;
 }
 
-.dates
-{
+.dates {
     width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  .box-container {
-    flex-direction: column;
-  }
-  .box1 {
-    flex: 1;
-  }
-  .box2 {
-    flex: 2;
-  }
-  .icon1 {
-    padding: 5%;
-  }
-  i {
-    font-size: 200%;
-  }
-  .icon1-1 {
-    margin: 5% 0;
-    font-size: 150%;
-  }
-  Button {
-    font-size: 150%;
-  }
+    .box-container {
+        flex-direction: column;
+    }
+
+    .box1 {
+        flex: 1;
+    }
+
+    .box2 {
+        flex: 2;
+    }
+
+    .icon1 {
+        padding: 5%;
+    }
+
+    i {
+        font-size: 200%;
+    }
+
+    .icon1-1 {
+        margin: 5% 0;
+        font-size: 150%;
+    }
+
+    Button {
+        font-size: 150%;
+    }
 }
 </style>
